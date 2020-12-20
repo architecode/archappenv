@@ -1,0 +1,17 @@
+# Folders
+/.nyc_output
+/node_modules
+/typings
+
+# Files
+.DS_Store
+
+# Built Library
+/appenv
+/services
+/util
+
+/index.js
+/index.js.map
+/bind.js
+/bind.js.map
