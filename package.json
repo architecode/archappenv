@@ -31,6 +31,6 @@
   "license": "MIT",
   "repository": "git+https://github.com/architecode/archappenv",
   "devDependencies": {
-    "archdevts": "20.9.1"
+    "archdevts": "20.12.19"
   }
 }
