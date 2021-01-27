@@ -1,9 +1,7 @@
 import * as Path from "path";
 import { packagePath } from "./packagepath";
 
-export const resolveFilePath = (type: string, filepath: string, base?: string) => {
-  type = type.toLowerCase();
-
+export const resolveFilePath = (type: "file" | "module", filepath: string, base?: string) => {
   if (type === "file") {
     if (base === undefined) {
       if (filepath === undefined) {
