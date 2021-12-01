@@ -116,7 +116,7 @@ export const loader = (() => {
     },
     resolveValue: (val: { [key: string]: any; }) => {
       if (val.type && val.resource) {
-        if (val.hasOwnProperty("$")) {
+        if (Object.prototype.hasOwnProperty.call(val, "$")) {
           if (val.$ === undefined || val.$ === null) {
             delete val.$;
           }
