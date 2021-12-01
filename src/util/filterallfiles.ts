@@ -5,7 +5,7 @@ import { resolvePath } from "./resolvepath";
 export const filterAllFilesSync = (
   filter: (filepath: string) => boolean,
   basePath: string,
-  deep: number = -1): string[] => {
+  deep = -1): string[] => {
   if (filter === undefined) {
     return [];
   }

@@ -2,7 +2,7 @@ import * as FS from "fs";
 import * as Path from "path";
 import { resolvePath } from "./resolvepath";
 
-export const allFilesSync = (basePath: string, deep: number = -1): string[] => {
+export const allFilesSync = (basePath: string, deep = -1): string[] => {
   deep = deep < -1 ? -1 : deep;
   const resolvedPath = resolvePath(basePath);
 

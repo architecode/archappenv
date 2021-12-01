@@ -1,10 +1,9 @@
 import * as Path from "path";
 import { packagePath } from "./packagepath";
 
-export const resolveFilePath = (type: string, filepath: string, base?: string) => {
-  type = type.toLowerCase();
-
-  if (type === "file") {
+export const resolveFilePath = (type: "file" | "module", filepath: string, base?: string) => {
+  const _type: string = (type as string).toLowerCase();
+  if (_type === "file") {
     if (base === undefined) {
       if (filepath === undefined) {
         return Path.join(packagePath(), "index.js");
@@ -28,10 +27,11 @@ export const resolveFilePath = (type: string, filepath: string, base?: string) =
         }
       }
     }
-  } else if (type === "module") {
+  } else if (_type === "module") {
     if (base === undefined) {
       if (filepath === undefined) {
         const pkgJSON = Path.join(packagePath(), "package.json");
+        // eslint-disable-next-line @typescript-eslint/no-var-requires
         const main = require(pkgJSON).main;
         return Path.join(packagePath(), main);
       } else {
@@ -49,7 +49,7 @@ export const resolveFilePath = (type: string, filepath: string, base?: string) =
       }
     }
   } else {
-    return false;
+    return undefined;
   }
 };
 

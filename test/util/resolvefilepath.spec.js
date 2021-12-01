@@ -149,7 +149,7 @@ describe('#resolveFilePath()', () => {
     const type = "unknown";
     const filepath = "./test.js";
     const base = "module";
-    const expected = false;
+    const expected = undefined;
 
     // acts
     const result = resolveFilePath(type, filepath, base);
