@@ -2,8 +2,8 @@ import * as Path from "path";
 import { packagePath } from "./packagepath";
 
 export const resolveFilePath = (type: "file" | "module", filepath: string, base?: string) => {
-  const _type: string = (type as string).toLowerCase();
-  if (_type === "file") {
+  const t = (type as string).toLowerCase();
+  if (t === "file") {
     if (base === undefined) {
       if (filepath === undefined) {
         return Path.join(packagePath(), "index.js");
@@ -27,7 +27,7 @@ export const resolveFilePath = (type: "file" | "module", filepath: string, base?
         }
       }
     }
-  } else if (_type === "module") {
+  } else if (t === "module") {
     if (base === undefined) {
       if (filepath === undefined) {
         const pkgJSON = Path.join(packagePath(), "package.json");
